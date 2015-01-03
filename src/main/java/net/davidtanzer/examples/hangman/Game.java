@@ -1,7 +1,7 @@
 package net.davidtanzer.examples.hangman;
 
 import net.davidtanzer.examples.hangman.player.Player;
-import net.davidtanzer.examples.hangman.player.StupidPlayer;
+import net.davidtanzer.examples.hangman.player.StrategicPlayer;
 
 public class Game {
 	private static final int MAX_TRIES = 8;
@@ -10,7 +10,7 @@ public class Game {
 
 	public Game() {
 		dictionary = new SecretWordProvider();
-		player = new StupidPlayer();
+		player = new StrategicPlayer();
 	}
 
 	public void start() {
