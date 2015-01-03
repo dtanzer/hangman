@@ -1,5 +1,8 @@
 package net.davidtanzer.examples.hangman;
 
+import net.davidtanzer.examples.hangman.player.Player;
+import net.davidtanzer.examples.hangman.player.StupidPlayer;
+
 public class Game {
 	private static final int MAX_TRIES = 8;
 	private final SecretWordProvider dictionary;

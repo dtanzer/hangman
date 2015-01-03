@@ -1,4 +1,7 @@
-package net.davidtanzer.examples.hangman;
+package net.davidtanzer.examples.hangman.player;
+
+import net.davidtanzer.examples.hangman.output.CommandLineOutput;
+import net.davidtanzer.examples.hangman.output.GameOutput;
 
 public class StupidPlayer implements Player {
 	private final GameOutput gameOutput;

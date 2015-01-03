@@ -1,4 +1,4 @@
-package net.davidtanzer.examples.hangman;
+package net.davidtanzer.examples.hangman.output;
 
 public interface GameOutput {
 	void update(String hint, int livesLeft, String nextGuess);

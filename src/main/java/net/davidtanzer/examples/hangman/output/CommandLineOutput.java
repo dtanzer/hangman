@@ -1,4 +1,4 @@
-package net.davidtanzer.examples.hangman;
+package net.davidtanzer.examples.hangman.output;
 
 public class CommandLineOutput implements GameOutput {
 	@Override

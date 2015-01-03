@@ -1,4 +1,4 @@
-package net.davidtanzer.examples.hangman;
+package net.davidtanzer.examples.hangman.player;
 
 public interface Player {
 	String guess(String hint, int livesLeft);
