@@ -1,0 +1,3 @@
+include ':hangman_no_ioc', ':hangman_ioc_simple', ':hangman_ioc_spring'
+
+rootProject.name = 'hangman'
