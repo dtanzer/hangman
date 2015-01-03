@@ -1,7 +1,6 @@
 package net.davidtanzer.examples.hangman;
 
-public class SimpleDictionary implements Dictionary {
-	@Override
+public class SecretWordProvider {
 	public String randomWord() {
 		return "cucumber";
 	}
