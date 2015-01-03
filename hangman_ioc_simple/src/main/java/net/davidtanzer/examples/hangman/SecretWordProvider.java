@@ -1,7 +1,6 @@
 package net.davidtanzer.examples.hangman;
 
 import net.davidtanzer.examples.hangman.dictionary.Dictionary;
-import net.davidtanzer.examples.hangman.dictionary.OneWordDictionary;
 
 import java.util.Random;
 
@@ -9,9 +8,9 @@ public class SecretWordProvider {
 	private final Dictionary dictionary;
 	private final Random random;
 
-	public SecretWordProvider() {
-		random = new Random();
-		dictionary = new OneWordDictionary();
+	public SecretWordProvider(final Dictionary dictionary, final Random random) {
+		this.random = random;
+		this.dictionary = dictionary;
 	}
 
 	public String randomWord() {

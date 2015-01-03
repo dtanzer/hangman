@@ -1,14 +1,13 @@
 package net.davidtanzer.examples.hangman.player;
 
-import net.davidtanzer.examples.hangman.output.CommandLineOutput;
 import net.davidtanzer.examples.hangman.output.GameOutput;
 
 public class StupidPlayer implements Player {
 	private final GameOutput gameOutput;
 	private char lastGuess = 'a';
 
-	public StupidPlayer() {
-		gameOutput = new CommandLineOutput();
+	public StupidPlayer(final GameOutput gameOutput) {
+		this.gameOutput = gameOutput;
 	}
 
 	@Override

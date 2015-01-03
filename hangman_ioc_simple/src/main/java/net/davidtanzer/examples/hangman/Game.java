@@ -1,20 +1,19 @@
 package net.davidtanzer.examples.hangman;
 
 import net.davidtanzer.examples.hangman.player.Player;
-import net.davidtanzer.examples.hangman.player.StrategicPlayer;
 
 public class Game {
 	private static final int MAX_TRIES = 8;
-	private final SecretWordProvider dictionary;
+	private final SecretWordProvider secretWordProvider;
 	private Player player;
 
-	public Game() {
-		dictionary = new SecretWordProvider();
-		player = new StrategicPlayer();
+	public Game(final SecretWordProvider secretWordProvider, final Player player) {
+		this.player = player;
+		this.secretWordProvider = secretWordProvider;
 	}
 
 	public void start() {
-		String secretWord = dictionary.randomWord();
+		String secretWord = secretWordProvider.randomWord();
 		String guesses = "";
 
 		for(int i=1; i <= MAX_TRIES; i++) {
