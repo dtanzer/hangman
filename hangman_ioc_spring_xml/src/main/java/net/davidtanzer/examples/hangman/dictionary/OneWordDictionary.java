@@ -14,6 +14,6 @@ public class OneWordDictionary implements Dictionary {
 		if(index != 0) {
 			throw new IndexOutOfBoundsException("Index \""+index+"\" is invialid.");
 		}
-		return "zuccini";
+		return "pumpkin";
 	}
 }
