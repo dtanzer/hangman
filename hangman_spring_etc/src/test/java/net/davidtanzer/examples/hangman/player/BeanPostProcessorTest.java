@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -31,7 +32,10 @@ public class BeanPostProcessorTest {
 
 	@Test(expected = ClassCastException.class)
 	public void changeBeanToIncompatibleClass() {
-		PlayerStrategy bean = (PlayerStrategy) applicationContext.getBean("playerStrategy");
+		IncompatibleBean bean = (IncompatibleBean) applicationContext.getBean("incompatibleBean");
+	}
+
+	public static class IncompatibleBean {
 	}
 
 	public static class TestPostProcessor implements BeanPostProcessor {
@@ -40,7 +44,10 @@ public class BeanPostProcessorTest {
 
 		@Override
 		public Object postProcessBeforeInitialization(final Object bean, final String beanName) throws BeansException {
-			return new StupidPlayer(gameOutput);
+			if(bean instanceof Player || bean instanceof IncompatibleBean)
+				return new StupidPlayer(gameOutput);
+
+			return bean;
 		}
 
 		@Override
@@ -49,7 +56,7 @@ public class BeanPostProcessorTest {
 		}
 	}
 
-	@ContextConfiguration
+	@Configuration
 	public static class TestConfiguration {
 		@Bean
 		public TestPostProcessor tpp() {
@@ -69,6 +76,11 @@ public class BeanPostProcessorTest {
 		@Bean
 		public GameOutput gameOutput() {
 			return new CommandLineOutput();
+		}
+
+		@Bean
+		public IncompatibleBean incompatibleBean() {
+			return new IncompatibleBean();
 		}
 	}
 }
