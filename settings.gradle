@@ -1,3 +1,4 @@
-include ':hangman_no_ioc', ':hangman_ioc_simple', ':hangman_ioc_spring', ':hangman_ioc_spring_xml', ':hangman_spring_testing'
+include ':hangman_no_ioc', ':hangman_ioc_simple', ':hangman_ioc_spring', ':hangman_ioc_spring_xml',
+		':hangman_spring_testing', ':hangman_spring_etc'
 
 rootProject.name = 'hangman'
